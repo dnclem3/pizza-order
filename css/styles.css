@@ -1,0 +1,17 @@
+body {
+  background-image: url("http://zacharys.com/wp-content/uploads/2014/04/PizzaThinTomBasil_12.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#title {
+  padding-top: 15px;
+  font-family: 'Lobster', cursive;
+  font-size: 5em;
+  color: #ffffff;
+}
+
+.OrderSheet {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px 10px 15px 10px;
+}
