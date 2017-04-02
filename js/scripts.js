@@ -25,6 +25,21 @@ Customer.prototype.price = function() {
   this.bill+= this.toppings.length * 1.5;
 }
 
+Customer.prototype.printOrder = function() {
+  var pizza = "<li>Crust Type: " + this.crust + "</li>";
+  pizza+= "<li>Pizza Size: " + this.size + "</li>";
+  pizza+= "<li>Toppings: ";
+  this.toppings.forEach(function(topping) {
+    pizza += topping + ", ";
+  });
+  pizza+= "</li>";
+  $("#order").append(pizza);
+}
+
+Customer.prototype.totalBill = function() {
+  $(".total").text(this.bill);
+}
+
 var createUser = function() {
   var name = $("#name").val();
   var crust = $("#crust").val();
@@ -38,9 +53,12 @@ var createUser = function() {
 
 $(document).ready(function() {
   $("form").submit(function(event) {
+    $("#results").show();
     var customer = createUser();
     customer.price();
-    console.log(customer);
+    customer.printOrder();
+    customer.totalBill();
+    $(".name").text(customer.name);
     event.preventDefault();
   });
 });
