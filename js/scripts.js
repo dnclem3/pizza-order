@@ -8,15 +8,15 @@ function Customer(name, crust, size) {
 }
 
 Customer.prototype.price = function() {
-  if (this.crust = "regular") {
+  if (this.crust = "Regular Crust") {
     this.bill+= 2;
   } else {
     this.bill+= 3;
   }
 
-  if (this.size = "large") {
+  if (this.size = "Large") {
     this.bill+= 10;
-  } else if (this.size = "medium") {
+  } else if (this.size = "Medium") {
     this.bill+= 7;
   } else {
     this.bill+= 5;
@@ -33,6 +33,7 @@ Customer.prototype.printOrder = function() {
     pizza += topping + ", ";
   });
   pizza+= "</li>";
+  $("#order").empty();
   $("#order").append(pizza);
 }
 
@@ -51,6 +52,7 @@ var createUser = function() {
   return user;
 }
 
+//User Interface
 $(document).ready(function() {
   $("form").submit(function(event) {
     $("#results").show();
